@@ -10,33 +10,22 @@ import {MdSwapCalls} from 'react-icons/md'
 import PropTypes from 'prop-types';
 import SplitScreen from '../../components/SplitScreen'
 import { coinDetails } from '../../api'
+import millify from "millify";
 
 export default function CoinPage() {
-  
   const ChartContent = () => {
-    const styles = {
-      body: "mb-12",
-      currentPrice: "text-4xl font-bold",
-      priceChange: `text-sm font-bold mb-6`,
-      dayPick: "flex mt-6",
-      dayOption: "text-green-900 px-2 py-1 text-xs font-bold mr-3 rounded-md shadow-2xl hover:shadow-none cursor-pointer"
-    }
-    const [dayChart, setDayChart] = useState(1);
     return (
-      <div className={styles.body}>
-        <div className={styles.currentPrice}> {coin.currentPrice} Nok </div> 
-        <div className={`${styles.priceChange} ${coin.dayChange > 0 ? "text-green-500" : "text-red-500"}`}>
+      <div className="mb-12">
+        <div className="text-4xl font-bold"> {coin.currentPrice} Nok </div> 
+        <div className={`text-lg font-bold mb-6 ${coin.dayChange>0 ? "text-green-500" : "text-red-500"}`}>
           {coin.dayChange > 0 && '+'}
           {coin.dayChange} /
           {coin.dayPercentageChange > 0 ? ' +' : ' '}
           {coin.dayPercentageChange + '%'}
         </div>
         <Chart dataX={coin.seven_days} borderWidth={3}  yGrid={true}  xGrid={true} grid={true} legends={true} tooltipEnable={true} />
-        <div className={styles.dayPick}>
-          <p onClick={()=>setDayChart(1)}  className={`${styles.dayOption} ${dayChart==1 ? "bg-green-400" : ""}`}>1D</p>
-          <p onClick={()=>setDayChart(7)} className={`${styles.dayOption} ${dayChart==7 ? "bg-green-400" : ""}`}>7D</p>
-          <p onClick={()=>setDayChart(30)} className={`${styles.dayOption} ${dayChart==30 ? "bg-green-400" : ""}`}>30D</p>
-          <p onClick={()=>setDayChart(365)} className={`${styles.dayOption} ${dayChart==365 ? "bg-green-400" : ""}`}>1Y</p>
+        <div className="flex flex-wrap">
+
         </div>
       </div>
     )
@@ -87,15 +76,15 @@ export default function CoinPage() {
                       <div className="flex flex-wrap justify-around mt-3">
                         <div className="text-left">
                           <p className="text-gray-700 text-sm">Market Cap</p>
-                          <p className="text-gray-900 text-xl font-semibold">{coin.marketCap} Nok</p>
+                          <p className="text-gray-900 text-xl font-semibold">{millify(coin.marketCap)} Nok</p>
                         </div>
                         <div className="text-left">
                           <p className="text-gray-700 text-sm">Daily High</p>
-                          <p className="text-gray-900 text-xl font-semibold">{coin.high24h} Nok</p>
+                          <p className="text-gray-900 text-xl font-semibold">{millify(coin.high24h)} Nok</p>
                         </div>
                         <div className="text-left">
                           <p className="text-gray-700 text-sm">Daily Low</p>
-                          <p className="text-gray-900 text-xl font-semibold">{coin.low24h} Nok</p>
+                          <p className="text-gray-900 text-xl font-semibold">{millify(coin.low24h)} Nok</p>
                         </div>
                       </div>
                     </BasicCard>

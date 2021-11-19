@@ -17,7 +17,7 @@ export default function CoinPage() {
     const styles = {
       body: "mb-12",
       currentPrice: "text-4xl font-bold",
-      priceChange: `text-sm font-bold mb-6`,
+      priceChange: `text-xl font-bold mb-6`,
       dayPick: "flex mt-6",
       dayOption: "text-green-900 px-2 py-1 text-xs font-bold mr-3 rounded-md shadow-2xl hover:shadow-none cursor-pointer"
     }
@@ -25,7 +25,7 @@ export default function CoinPage() {
     return (
       <div className={styles.body}>
         <div className={styles.currentPrice}> {coin.currentPrice} Nok </div> 
-        <div className={`${styles.priceChange} ${coin.dayChange > 0 ? "text-green-500" : "text-red-500"}`}>
+        <div className={`${styles.priceChange + coin.dayChange > 0 ? "text-green-500" : "text-red-500"}`}>
           {coin.dayChange > 0 && '+'}
           {coin.dayChange} /
           {coin.dayPercentageChange > 0 ? ' +' : ' '}

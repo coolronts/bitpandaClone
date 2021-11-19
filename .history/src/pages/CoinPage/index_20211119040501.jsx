@@ -17,7 +17,7 @@ export default function CoinPage() {
     const styles = {
       body: "mb-12",
       currentPrice: "text-4xl font-bold",
-      priceChange: `text-sm font-bold mb-6`,
+      priceChange: `text-xl font-bold mb-6`,
       dayPick: "flex mt-6",
       dayOption: "text-green-900 px-2 py-1 text-xs font-bold mr-3 rounded-md shadow-2xl hover:shadow-none cursor-pointer"
     }

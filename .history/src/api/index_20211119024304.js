@@ -1,7 +1,6 @@
 // import { getUnixTime, priorSevenUnix } from "../utils/getUnixTime";
 
 import axios from "axios";
-import millify from "millify";
 
 const baseLink = "https://api.coingecko.com/api/v3/";
 
@@ -47,9 +46,7 @@ export async function coinDetails(id) {
             2
         );
     result.description = coinDetails.data.description.en;
-    result.marketCap = millify(coinDetails.data.market_data.market_cap.nok);
-    result.high24h = millify(coinDetails.data.market_data.high_24h.nok);
-    result.low24h = millify(coinDetails.data.market_data.low_24h.nok);
+    result.marketCap = coinDetails.data.market_data.market_cap.nok.toFixed(2);
 
     console.log(coinDetails.data);
 
