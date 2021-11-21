@@ -4,10 +4,10 @@ import React from 'react';
 export default function Logo({alt, src, radius=12 }) {
   const styles = {
     container: `w-${radius} h-${radius} flex-shrink rounded-full ring-2 ring-white bg-blue-50`,
-    logo: `object-contain rounded-full`
+    logo: `object-contain w-${radius} h-${radius} `
   }
   return (
-    <div className={styles.container}>
+    <div className="">
       <img className={styles.logo} alt={alt} src={src} />
     </div>
     

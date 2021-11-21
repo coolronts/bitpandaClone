@@ -3,8 +3,8 @@ import React from 'react';
 
 export default function Logo({alt, src, radius=12 }) {
   const styles = {
-    container: `w-${radius} h-${radius} flex-shrink rounded-full ring-2 ring-white bg-blue-50`,
-    logo: `object-contain rounded-full`
+    container: `w-${radius} h-${radius}  flex-shrink rounded-full ring-2 ring-white bg-blue-50`,
+    logo: `object-contain`
   }
   return (
     <div className={styles.container}>
