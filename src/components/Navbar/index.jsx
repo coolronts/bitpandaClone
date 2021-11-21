@@ -15,7 +15,7 @@ export default function NavBar() {
   }
   return (
     <div className={styles.body}>
-      <Logo alt="logo" src="https://images.saymedia-content.com/.image/t_share/MTgyNzMyMzkxNDI3ODEwNjU2/bitpanda-exchange-and-the-best-token.png" />
+      {/* <Logo alt="logo" src="https://images.saymedia-content.com/.image/t_share/MTgyNzMyMzkxNDI3ODEwNjU2/bitpanda-exchange-and-the-best-token.png" /> */}
       <div className={styles.menu}>
         <Link to="/">
           <div>DashBoard</div>
