@@ -6,7 +6,7 @@ export default function Logo({alt, src, radius=12 }) {
     logo: `inline object-cover w-${radius} h-${radius} mr-2 rounded-full  bg-blue-50`
   }
   return (
-    <img style={{width:'50px',height:'50px'}} className={styles.logo} alt={alt} src={src} />    
+    <img style={{width:'20px',height:'20px'}} className={styles.logo} alt={alt} src={src} />    
   )
 }
 
