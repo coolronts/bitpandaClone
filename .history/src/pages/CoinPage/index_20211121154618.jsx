@@ -64,8 +64,8 @@ export default function CoinPage() {
   const [readMore, setReadMore] = useState(false)
   const styles = {
     body: "px-12",
-    name: "text-4xl font-bold font-sans",
-    symbol: "uppercase text-xl font-sans font-medium",
+    name: "text-4xl font-bold",
+    symbol: "uppercase text-xl",
     about: "text-2xl font-semibold pt-12 pb-6",
     readMore:"h-48 overflow-ellipsis overflow-hidden",
     readLess: "h-auto",
@@ -92,7 +92,7 @@ export default function CoinPage() {
             <section className={styles.body}>
               <SplitScreen leftWeight={'w-full mr-12'} rightWeight={'w-1/2'}>
                 <div id="left">
-                  <SplitScreen containerWeight="flex mb-6" leftWeight={'flex-shrink mr-2'} rightWeight={'w-1/3'}>
+                  <SplitScreen containerWeight="flex mb-6 font-sans" leftWeight={'flex-shrink mr-2'} rightWeight={'w-1/3'}>
                     <Logo alt="coin Logo" src={coin.logo} radius={16} />
                     <div> 
                       <h1 className={styles.name}>{coin.name} </h1>

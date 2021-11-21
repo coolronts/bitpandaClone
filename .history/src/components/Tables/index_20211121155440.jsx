@@ -14,6 +14,7 @@ export default function Tables({
   items,
   lastElement,
   increaseLimit,
+  day
 }) {
 
   const styles = {
@@ -102,5 +103,5 @@ Tables.propTypes = {
   resourceName: PropTypes.string,
   lastElement: PropTypes.bool,
   increaseLimit: PropTypes.func,
-  
+  day: PropTypes.number,
 }

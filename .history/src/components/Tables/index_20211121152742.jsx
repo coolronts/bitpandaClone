@@ -13,7 +13,7 @@ export default function Tables({
   headings,
   items,
   lastElement,
-  increaseLimit,
+  increaseLimit
 }) {
 
   const styles = {

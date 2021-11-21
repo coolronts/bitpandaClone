@@ -65,7 +65,7 @@ export default function CoinPage() {
   const styles = {
     body: "px-12",
     name: "text-4xl font-bold font-sans",
-    symbol: "uppercase text-xl font-sans font-medium",
+    symbol: "uppercase text-xl font-sans",
     about: "text-2xl font-semibold pt-12 pb-6",
     readMore:"h-48 overflow-ellipsis overflow-hidden",
     readLess: "h-auto",

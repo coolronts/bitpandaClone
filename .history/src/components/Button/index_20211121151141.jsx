@@ -48,20 +48,21 @@ Circle.propTypes = {
 }
 
 
-export function SmallSquare({  colour, name, icon }) {
+export function SmallSquare({  color, name }) {
   const styles = {
-    container: `flex items-center justify-center shadow-2xl bg-transparent ring-2 ring-${colour}-300 hover:bg-gray-50 hover:shadow-none cursor-pointer`,
-    name: `text-sm font-bold text-gray-600 px-3 py-1`
+    container: `flex flex-col text-center w-${radius}`,
+    base: `flex items-center justify-center shadow-2xl bg-${color}-400 ring-1 ring-gray-900 hover:bg-${color}-500 hover:shadow-none cursor-pointer`,
+    icon: `text-4xl text-gray-600`,
+    name: `text-xl font-bold text-gray-600`
   }
   return (
     <div className={styles.container}>
-      <p className={styles.name}>{name} {icon}</p>
+      <p className={styles.name}>{name}</p>
     </div>
   )
 }
 
 SmallSquare.propTypes = {
-  colour: PropTypes.string,
+  color: PropTypes.string,
   name: PropTypes.string,
-  icon: PropTypes.element
 }

@@ -13,11 +13,11 @@ export default function Tables({
   headings,
   items,
   lastElement,
-  increaseLimit,
+  increaseLimit
 }) {
 
   const styles = {
-    container: "shadow border-b border-gray-200 rounded-lg font-sans",
+    container: "shadow  border-b border-gray-200 rounded-lg py-12 font-sans",
     table: "min-w-full divide-y divide-gray-200 rounded-lg text-center",
     header: "bg-gray-50",
     scope: "px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center",
@@ -85,7 +85,7 @@ export default function Tables({
               <td className={styles.dataCell}>
                 <SplitScreen containerWeight="flex items-center" leftWeight="flex-shrink" rightWeight="ml-3">
                   <SmallSquare name={"Buy"} colour={"green"} />
-                  <SmallSquare icon={<HiDotsHorizontal className="text-xl"/>} colour={"green"}/>
+                  <SmallSquare icon={<HiDotsHorizontal className="text-lg"/>} colour={"green"}/>
                 </SplitScreen>
               </td>
             </tr>

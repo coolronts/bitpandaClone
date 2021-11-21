@@ -55,7 +55,7 @@ export function SmallSquare({  colour, name, icon }) {
   }
   return (
     <div className={styles.container}>
-      <p className={styles.name}>{name} {icon}</p>
+      <p className={styles.name}>{name}</p>
     </div>
   )
 }

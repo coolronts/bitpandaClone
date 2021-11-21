@@ -14,6 +14,7 @@ export default function Tables({
   items,
   lastElement,
   increaseLimit,
+  day
 }) {
 
   const styles = {
@@ -28,6 +29,8 @@ export default function Tables({
     rowBody: "hover:bg-gray-100 cursor-pointer hover:shadow-md",
     text: "text-sm"
   }
+   
+  
   const observer = useRef();
   const lastElementRef = useCallback(node => {
     if(observer.current) observer.current.disconnect();
@@ -102,5 +105,5 @@ Tables.propTypes = {
   resourceName: PropTypes.string,
   lastElement: PropTypes.bool,
   increaseLimit: PropTypes.func,
-  
+  day: PropTypes.number,
 }

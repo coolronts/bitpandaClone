@@ -1,33 +1,35 @@
 import React, { useCallback, useRef } from 'react'
 
 import Chart from '../Chart'
-import {HiDotsHorizontal} from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 import Logo from '../Logo'
 import PropTypes from 'prop-types'
-import {SmallSquare} from '../Button'
 import SplitScreen from '../SplitScreen'
-import { formatter } from '../../utils/currencyFormatter'
 
 export default function Tables({
   headings,
   items,
   lastElement,
-  increaseLimit,
+  increaseLimit
 }) {
 
   const styles = {
-    container: "shadow border-b border-gray-200 rounded-lg font-sans",
+    container: "shadow  border-b border-gray-200 rounded-lg py-12 font-sans",
     table: "min-w-full divide-y divide-gray-200 rounded-lg text-center",
     header: "bg-gray-50",
     scope: "px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center",
     buttonScope: "relative px-6 py-3",
     body: "bg-white divide-y divide-gray-200",
-    dataCell: "px-6 py-1 whitespace-nowrap font-semibold text-lg",
+    dataCell: "px-6 py-4 whitespace-nowrap font-semibold text-lg",
     row: "flex items-center",
-    rowBody: "hover:bg-gray-100 cursor-pointer hover:shadow-md",
-    text: "text-sm"
+    rowBody: "hover:bg-gray-100 cursor-pointer hover:shadow-md"
   }
+  var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'NOK',
+
+  });
+
   const observer = useRef();
   const lastElementRef = useCallback(node => {
     if(observer.current) observer.current.disconnect();
@@ -72,7 +74,7 @@ export default function Tables({
                 `}>
                   <Link to={`/coin/${item.id}`}>
                     <div className={styles.text}> {
-                      index<2 ? formatter.format(data) : data.toFixed(2) + " %"
+                      index<2 ? formatter.format(data.toFixed(2)) + " Nok" : data.toFixed(2) + " %"
                     } </div>
                   </Link>
                 </td>
@@ -83,10 +85,9 @@ export default function Tables({
                 </Link>
               </td>
               <td className={styles.dataCell}>
-                <SplitScreen containerWeight="flex items-center" leftWeight="flex-shrink" rightWeight="ml-3">
-                  <SmallSquare name={"Buy"} colour={"green"} />
-                  <SmallSquare icon={<HiDotsHorizontal className="text-xl"/>} colour={"green"}/>
-                </SplitScreen>
+                <Link to={`/coin/${item.id}`}>
+                  <a href="#">Edit</a>
+                </Link>
               </td>
             </tr>
           ))}
