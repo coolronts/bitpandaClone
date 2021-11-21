@@ -1,0 +1,1 @@
+const observer = new IntersectionObserver(callbackFunction, options);
