@@ -5,7 +5,7 @@ import React, {useEffect} from 'react'
 import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types'
 
-export default function Chart({ dataX, labels=dataX ,  maintainAspectRatio=true, aspectRatio=4, borderWidth=1, yGrid=false, xGrid=false, tooltipEnable=false }) {
+export default function Chart({ dataX, labels={dataX} ,  maintainAspectRatio=true, aspectRatio=4, borderWidth=1, yGrid=false, xGrid=false, tooltipEnable=false }) {
   let radius = 0
   if(tooltipEnable){
     radius = 2

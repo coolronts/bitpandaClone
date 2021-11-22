@@ -1,5 +1,6 @@
-import Chart from '../Chart'
+import { Line } from 'react-chartjs-2';
 import React from 'react'
+import Chart from '../Chart'
 
 export default function MyPortfolio() {
   const styles = {
@@ -8,7 +9,7 @@ export default function MyPortfolio() {
     deposit: "text-6xl font-bold my-4",
     change:"font-bold"
   }
-  const data =  [0.6,0.6,0.6,0.6,0.6,0.6]
+  const data: [0.6,0.6,0.6,0.6,0.6,0.6],
   const dataValue = ['14:00', '20:00', '30:00','8:00']
 
   
@@ -17,7 +18,7 @@ export default function MyPortfolio() {
       <div className={styles.title}>My Portfolio</div>
       <div className={styles.deposit}>$1200</div>
       <div className={styles.change}> -2.45% (24h)</div>
-      <Chart dataX={data} borderWidth={3} labels={dataValue}  yGrid={true}  xGrid={true} grid={true} legends={true} tooltipEnable={true} />
+      <Line data={data} options={options} />
     </div>
   )
 }
