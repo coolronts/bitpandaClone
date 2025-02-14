@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": false,
     "dependencies": {
-        "@craco/craco": "^6.4.0",
-        "axios": "^0.24.0",
+        "@craco/craco": "^7.1.0",
+        "axios": "^0.28.0",
         "chart.js": "^3.6.0",
         "chartjs-adapter-date-fns": "^2.0.0",
         "date-fns": "^2.25.0",
@@ -16,7 +16,7 @@
         "react-icons": "^4.3.1",
         "react-resizable": "^3.0.4",
         "react-router-dom": "^6.0.2",
-        "react-scripts": "4.0.3"
+        "react-scripts": "5.0.1"
     },
     "scripts": {
         "start": "craco start",
@@ -47,7 +47,7 @@
         "autoprefixer": "^9.8.8",
         "eslint": "^7.32.0",
         "eslint-plugin-react": "^7.27.0",
-        "postcss": "^7.0.39",
+        "postcss": "^8.4.31",
         "tailwind-styled-components": "^2.0.3",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
     },
